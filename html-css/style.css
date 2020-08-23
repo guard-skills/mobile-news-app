@@ -10,8 +10,8 @@ body {
   font-family: 'Lato', Arial, Helvetica, sans-serif;
   color: #272121;
   position: relative;
+  max-width: 375px;
   margin: auto;
-  min-height: 100vh;
 }
 
 header {
@@ -120,7 +120,7 @@ header .header-right div {
 
 .nav-tabs {
   width: 90%;
-  margin: 1rem auto 0rem auto;
+  margin: 1rem auto 0.5rem auto;
   font-size: 0.9em;
   border-bottom: 0.3em #e4e4e4 solid;
 }
@@ -134,7 +134,7 @@ header .header-right div {
   border: none;
   font-weight: 700;
   border-bottom: 0.3em #fd5e53 solid !important;
-  margin-bottom: -0.3em;
+  margin-bottom: -1em;
 }
 
 .container {
@@ -170,10 +170,6 @@ header .header-right div {
   bottom: -1.3em;
   right: 0;
   font-size: 0.9em;
-}
-
-.edit-btn {
-  margin-right: 0.2em;
 }
 
 .container .news-card img {
@@ -232,69 +228,4 @@ header .header-right div {
   font-size: 0.9em;
   font-weight: 700;
 }
-
-.news-author {
-  font-weight: 400;
-  font-size: 0.9em;
-  color: #7e7e7e;
-}
-
-.addArticle {
-  width: 90%;
-  margin: auto;
-  padding-top: 5em;
-}
-
-.addArticle label{
-  font-size: 0.9rem;
-}
-
-.addArticle input[type=text]{
-  font-size: 1rem;
-}
-
-.addArticle h3{
-  font-size: 1.2rem;
-  font-weight: 700;
-}
-
-.addArticle .btn-return {
-  margin-left: 0.5rem;
-}
-
-.addArticle Button{
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.02rem;
-}
-
-.updateArticle {
-  width: 90%;
-  margin: auto;
-  padding-top: 5em;
-}
-
-.updateArticle label{
-  font-size: 0.9rem;
-}
-
-.updateArticle input[type=text]{
-  font-size: 1rem;
-}
-
-.updateArticle h3{
-  font-size: 1.2rem;
-  font-weight: 700;
-}
-
-.updateArticle .btn-return {
-  margin-left: 0.5rem;
-}
-
-.updateArticle Button{
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.02rem;
-}
-
 /*# sourceMappingURL=style.css.map */
