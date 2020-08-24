@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import axios from 'axios';
 import './App.css';
 import View from './View'
 import Tabs from 'react-bootstrap/Tabs';
@@ -7,6 +8,8 @@ import NewsCard from './newsCard';
 import Featured from './Featured';
 import AddArticle from './AddArticle';
 import UpdateArticle from './UpdateArticle';
+
+var url = 'http://localhost:4000/api'
 
 class App extends Component {
   constructor(props){
@@ -30,6 +33,36 @@ class App extends Component {
   setActiveView = (view) => {
     this.setState({activeView:view})
   }
+
+  getArticles = () => {
+    axios.get(url + '/articles')
+    .then(res => {
+      console.log(res.data)
+      this.setState({news:res.data})
+    })
+  }
+
+  addArticle = (data) =>{
+    axios.post(url + '/articles', data)
+    .then(res => {
+      this.getArticles()
+    })
+  }
+
+  updateArticle = (id, data) => {
+    axios.put(url + '/articles/' + id, data)
+    .then(res =>{
+      this.getArticles()
+    })
+  }
+
+  deleteArticle = (id) => {
+    axios.delete(url + '/articles/' + id)
+    .then(res=>{
+      this.getArticles()
+    })
+  }
+
 
   render(){
     return (
