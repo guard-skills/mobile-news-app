@@ -8,7 +8,8 @@ class AddArticle extends Component {
     }
     
     handleReturnButtonClick = (e)=>{
-        e.preventDefault()
+		e.preventDefault()
+		this.props.setActiveView('home')
 
 	}
 
