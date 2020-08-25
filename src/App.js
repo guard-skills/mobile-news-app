@@ -30,6 +30,8 @@ class App extends Component {
     };
   }
 
+  var hello = "hello"
+
   setActiveView = (view) => {
     this.setState({activeView:view})
   }
