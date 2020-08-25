@@ -24,11 +24,10 @@ class AddArticle extends Component {
 	handleSubmit = (e) => {
 		e.preventDefault()
 		var formData = new FormData(this.addForm)
-		console.log(formData)
 		var data = {
 			title: formData.get('title-input'),
 			author: formData.get('author-input'),
-			category: formData.get('category-input'),
+			category_id: parseInt(formData.get('category-input')),
 			source: formData.get('source-input'),
 			photo: this.getPhotoURL()
 		}
@@ -36,7 +35,7 @@ class AddArticle extends Component {
 
 		var {addArticle, setActiveView} = this.props
 
-		addArticle(data)
+		// addArticle(data)
 		setActiveView('home')
 	}
 
@@ -60,7 +59,7 @@ class AddArticle extends Component {
             
             <div className="form-group">
 	          <label htmlFor="category-input">Category</label>
-			  <select className="form-control" name="type-input" id="type-input">
+			  <select className="form-control" name="category-input" id="category-input">
 	            <option value="1">World</option>
 	            <option value="2">Nation</option>
 	            <option value="3">Business</option>
