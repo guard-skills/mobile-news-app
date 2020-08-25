@@ -26,12 +26,27 @@ class App extends Component {
           source: "Source",
           timestamp: "2020 21/08 15:00",
         },
-      ]
+      ],
+      articleToUpdate:{
+        id: 1,
+        title: "Title",
+        author: "John Smith",
+        category: "World",
+        source: "Source",
+      }
     };
   }
 
   setActiveView = (view) => {
     this.setState({activeView:view})
+  }
+
+  setArticleToUpdate =  (id)=>{
+    var foundArticle = this.state.news.find((article)=>{
+      return article.id === id;
+    })
+
+    this.setState({articleToUpdate:foundArticle})
   }
 
   getArticles = () => {
@@ -93,6 +108,7 @@ class App extends Component {
                             var newsItemProps ={
                               ...newsItem,
                               setActiveView: this.setActiveView,
+                              setArticleToUpdate: this.setArticleToUpdate,
                             }
                             return (<NewsCard {...newsItemProps}/>)
                           })
@@ -130,7 +146,7 @@ class App extends Component {
         </View>
 
         <View viewName="update-article" activeView={this.state.activeView} className="update-article">
-          <UpdateArticle setActiveView={this.setActiveView} />
+          <UpdateArticle {...this.state.articleToUpdate} updateArticle={this.updateArticle} setActiveView={this.setActiveView} />
         </View>
     </div>
     )
