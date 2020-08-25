@@ -30,8 +30,6 @@ class App extends Component {
     };
   }
 
-  var hello = "hello"
-
   setActiveView = (view) => {
     this.setState({activeView:view})
   }
@@ -87,9 +85,15 @@ class App extends Component {
                   <Tab eventKey="world" title="World" className="nav-item">
                     <div className="container">
                       <div className="news-cards">
-                        <NewsCard setActiveView={this.setActiveView}/>
-                        <NewsCard setActiveView={this.setActiveView}/>
-                        <NewsCard setActiveView={this.setActiveView}/>
+                        {
+                          this.state.news.map((newsItem) =>{
+                            var newsItemProps ={
+                              ...newsItem,
+                              setActiveView: this.setActiveView,
+                            }
+                            return (<NewsCard {...newsItemProps}/>)
+                          })
+                        }
                       </div>
                   </div>
                   </Tab>
