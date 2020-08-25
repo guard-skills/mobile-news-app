@@ -35,7 +35,7 @@ class AddArticle extends Component {
 
 		var {addArticle, setActiveView} = this.props
 
-		// addArticle(data)
+		addArticle(data)
 		setActiveView('home')
 	}
 

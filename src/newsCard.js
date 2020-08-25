@@ -25,7 +25,7 @@ class NewsCard extends Component {
 
         <div className="news-card">
             <div className="news-main">
-                <img src="https://picsum.photos/500?random=2" alt="news-card" className="news-card-photo" />
+                <img src={this.props.photo} alt="news-card" className="news-card-photo" />
                 <div className="news-title">
                     {this.props.title}
                     <div className="news-author">
