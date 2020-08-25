@@ -7,7 +7,10 @@ class NewsCard extends Component {
     }
     
     handleUpdateClick = () => {
-        this.props.setActiveView('update-article')
+        var {setActiveView,setArticleToUpdate,id} = this.props
+        setArticleToUpdate(id)
+        
+        setActiveView('update-article')
     }
 
   	render(){
@@ -31,13 +34,13 @@ class NewsCard extends Component {
             </div>
             <div className="news-info">
                 <div className="news-category">
-                    World
+                    {this.props.category}
                 </div>
                 <div className="news-timestamp">
                     21/08/2020 15:00
                 </div>
                 <div className="news-source">
-                    AP News
+                    {this.props.source}
                 </div>
             </div>
         </div>
