@@ -43,6 +43,14 @@ class App extends Component {
     this.setState({activeView:view})
   }
 
+  setArticleToUpdate =  (id)=>{
+    var foundArticle = this.state.news.find((article)=>{
+      return article.id === id;
+    })
+
+    this.setState({articleToUpdate:foundArticle})
+  }
+
   countArticles = () => {
     var a = this.state.news.length
     return a
