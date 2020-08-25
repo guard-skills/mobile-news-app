@@ -63,6 +63,9 @@ class App extends Component {
     })
   }
 
+  componentDidMount = ()=>{
+    this.getArticles()
+  }
 
   render(){
     return (
