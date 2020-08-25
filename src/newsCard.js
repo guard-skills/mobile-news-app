@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import Moment from 'react-moment';
 
 class NewsCard extends Component {
 
@@ -21,6 +22,8 @@ class NewsCard extends Component {
 
   	render(){
 
+        var dateString = this.props.createdAt;
+
     	return (
 
         <div className="news-card">
@@ -42,7 +45,7 @@ class NewsCard extends Component {
                     {this.props.category}
                 </div>
                 <div className="news-timestamp">
-                    21/08/2020 15:00
+                    <Moment format="YYYY/MM/DD HH:mm" date={dateString} />
                 </div>
                 <div className="news-source">
                     {this.props.source}

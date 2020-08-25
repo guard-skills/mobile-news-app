@@ -8,6 +8,8 @@ import NewsCard from './newsCard';
 import Featured from './Featured';
 import AddArticle from './AddArticle';
 import UpdateArticle from './UpdateArticle';
+import Moment from 'react-moment';
+import 'moment-timezone';
 
 var url = 'http://localhost:4000/api'
 
@@ -103,8 +105,8 @@ class App extends Component {
           <div className="main">
             <Featured />
   
-            <Tabs defaultActiveKey="world" id="tabs-home" className="nav nav-tabs">
-                  <Tab eventKey="world" title="World" className="nav-item">
+            <Tabs defaultActiveKey="all" id="tabs-home" className="nav nav-tabs">
+                  <Tab eventKey="all" title="Top News" className="nav-item">
                     <div className="container">
                       <div className="news-cards">
                         {
@@ -126,18 +128,14 @@ class App extends Component {
                   <Tab eventKey="nation" title="Nation" className="nav-item">
                     <div className="container">
                       <div className="news-cards">
-                        <NewsCard setActiveView={this.setActiveView}/>
-                        <NewsCard setActiveView={this.setActiveView}/>
-                        <NewsCard setActiveView={this.setActiveView}/>
+
                       </div>
                     </div>
                   </Tab>
                   <Tab eventKey="business" title="Business" className="nav-item">
                     <div className="container">
                         <div className="news-cards">
-                          <NewsCard setActiveView={this.setActiveView}/>
-                          <NewsCard setActiveView={this.setActiveView}/>
-                          <NewsCard setActiveView={this.setActiveView}/>
+
                         </div>
                       </div>
                   </Tab>

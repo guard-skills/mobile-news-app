@@ -208,6 +208,7 @@ header .header-right div {
           align-items: flex-end;
   font-size: 0.8em;
   margin-top: 1em;
+  position: relative;
 }
 
 .container .news-card .news-category {
@@ -225,6 +226,9 @@ header .header-right div {
 .container .news-card .news-timestamp {
   color: #b1b1b1;
   font-size: 0.9em;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-35%);
 }
 
 .container .news-card .news-source {
@@ -296,5 +300,6 @@ header .header-right div {
   text-transform: uppercase;
   letter-spacing: 0.02rem;
 }
+
 
 /*# sourceMappingURL=style.css.map */

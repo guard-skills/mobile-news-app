@@ -49,9 +49,13 @@ class UpdateArticle extends Component {
 	          <input type="text" className="form-control" name="author-input" id="author-input" defaultValue={author}/>
 	        </div>
             
-            <div className="form-group">
+			<div className="form-group">
 	          <label htmlFor="category-input">Category</label>
-	          <input type="text" className="form-control" name="category-input" id="category-input" defaultValue={category}/>
+			  <select className="form-control" name="category-input" id="category-input" defaultValue={category}>
+	            <option value="world">World</option>
+	            <option value="nation">Nation</option>
+	            <option value="business">Business</option>
+	          </select>
 	        </div>
 
             <div className="form-group">
