@@ -111,15 +111,17 @@ class App extends Component {
                       <div className="news-cards">
                         {
                           this.state.news.map((newsItem) =>{
-                            var newsItemProps ={
-                              ...newsItem,
-                              setActiveView: this.setActiveView,
-                              setArticleToUpdate: this.setArticleToUpdate,
-                              deleteArticle: this.deleteArticle
+                            if(newsItem.category === 'world'){
+                              var newsItemProps ={
+                                ...newsItem,
+                                setActiveView: this.setActiveView,
+                                setArticleToUpdate: this.setArticleToUpdate,
+                                deleteArticle: this.deleteArticle
+                              }
+                              console.log(newsItemProps)
+                              
+                              return (<NewsCard {...newsItemProps}/>)
                             }
-                            console.log(newsItemProps)
-
-                            return (<NewsCard {...newsItemProps}/>)
                           })
                         }
                       </div>
@@ -128,14 +130,42 @@ class App extends Component {
                   <Tab eventKey="nation" title="Nation" className="nav-item">
                     <div className="container">
                       <div className="news-cards">
-
+                        {
+                            this.state.news.map((newsItem) =>{
+                              if(newsItem.category === 'nation'){
+                                var newsItemProps ={
+                                  ...newsItem,
+                                  setActiveView: this.setActiveView,
+                                  setArticleToUpdate: this.setArticleToUpdate,
+                                  deleteArticle: this.deleteArticle
+                                }
+                                console.log(newsItemProps)
+                                
+                                return (<NewsCard {...newsItemProps}/>)
+                              }
+                            })
+                          }
                       </div>
                     </div>
                   </Tab>
                   <Tab eventKey="business" title="Business" className="nav-item">
                     <div className="container">
                         <div className="news-cards">
-
+                          {
+                              this.state.news.map((newsItem) =>{
+                                if(newsItem.category === 'business'){
+                                  var newsItemProps ={
+                                    ...newsItem,
+                                    setActiveView: this.setActiveView,
+                                    setArticleToUpdate: this.setArticleToUpdate,
+                                    deleteArticle: this.deleteArticle
+                                  }
+                                  console.log(newsItemProps)
+                                  
+                                  return (<NewsCard {...newsItemProps}/>)
+                                }
+                              })
+                            }
                         </div>
                       </div>
                   </Tab>
