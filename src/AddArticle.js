@@ -27,7 +27,8 @@ class AddArticle extends Component {
 		var data = {
 			title: formData.get('title-input'),
 			author: formData.get('author-input'),
-			category_id: parseInt(formData.get('category-input')),
+			// category_id: parseInt(formData.get('category-input')),
+			category: formData.get('category-input'),
 			source: formData.get('source-input'),
 			photo: this.getPhotoURL()
 		}
@@ -57,14 +58,22 @@ class AddArticle extends Component {
 	          <input type="text" className="form-control" name="author-input" id="author-input" placeholder="Enter article author"/>
 	        </div>
             
-            <div className="form-group">
+            {/* <div className="form-group">
 	          <label htmlFor="category-input">Category</label>
 			  <select className="form-control" name="category-input" id="category-input">
 	            <option value="1">World</option>
 	            <option value="2">Nation</option>
 	            <option value="3">Business</option>
 	          </select>
-	          {/* <input type="text" className="form-control" name="category-input" id="category-input" placeholder="Enter article category"/> */}
+	        </div> */}
+
+			<div className="form-group">
+	          <label htmlFor="category-input">Category</label>
+			  <select className="form-control" name="category-input" id="category-input">
+	            <option value="world">World</option>
+	            <option value="nation">Nation</option>
+	            <option value="business">Business</option>
+	          </select>
 	        </div>
 
             <div className="form-group">

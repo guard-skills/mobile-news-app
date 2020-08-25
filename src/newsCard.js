@@ -39,7 +39,7 @@ class NewsCard extends Component {
             </div>
             <div className="news-info">
                 <div className="news-category">
-                    {this.props.category_id}
+                    {this.props.category}
                 </div>
                 <div className="news-timestamp">
                     21/08/2020 15:00
