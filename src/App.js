@@ -115,6 +115,7 @@ class App extends Component {
                               ...newsItem,
                               setActiveView: this.setActiveView,
                               setArticleToUpdate: this.setArticleToUpdate,
+                              deleteArticle: this.deleteArticle
                             }
                             console.log(newsItemProps)
 
