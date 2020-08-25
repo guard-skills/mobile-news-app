@@ -34,10 +34,14 @@ class App extends Component {
     this.setState({activeView:view})
   }
 
+  countArticles = () => {
+    var a = this.state.news.length
+    return a
+  }
+
   getArticles = () => {
     axios.get(url + '/articles')
     .then(res => {
-      console.log(res.data)
       this.setState({news:res.data})
     })
   }
@@ -94,6 +98,8 @@ class App extends Component {
                               ...newsItem,
                               setActiveView: this.setActiveView,
                             }
+                            console.log(newsItemProps)
+
                             return (<NewsCard {...newsItemProps}/>)
                           })
                         }
@@ -125,8 +131,8 @@ class App extends Component {
           </div>
         </View>
 
-        <View viewName="add-article" activeView={this.state.activeView} className="add-article">
-          <AddArticle setActiveView={this.setActiveView}/>
+        <View viewName="add-article" activeView={this.state.activeView} className="add-article" >
+          <AddArticle setActiveView={this.setActiveView} addArticle={this.addArticle} countArticles={this.countArticles}/>
         </View>
 
         <View viewName="update-article" activeView={this.state.activeView} className="update-article">

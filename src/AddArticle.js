@@ -10,14 +10,41 @@ class AddArticle extends Component {
     handleReturnButtonClick = (e)=>{
         e.preventDefault()
 
-        this.props.setActiveView('home')
-    }
+	}
+
+	getPhotoURL = () => {
+		var url = 'https://picsum.photos/500?random='
+		var a = this.props.countArticles()
+		a++
+		a.toString()
+
+		return url + a 
+	}
+	
+	handleSubmit = (e) => {
+		e.preventDefault()
+		var formData = new FormData(this.addForm)
+		console.log(formData)
+		var data = {
+			title: formData.get('title-input'),
+			author: formData.get('author-input'),
+			category: formData.get('category-input'),
+			source: formData.get('source-input'),
+			photo: this.getPhotoURL()
+		}
+		console.log(data)
+
+		var {addArticle, setActiveView} = this.props
+
+		addArticle(data)
+		setActiveView('home')
+	}
 
   	render(){
 
     	return (
 
-	    <form className="addArticle">
+	    <form className="addArticle" onSubmit={this.handleSubmit} ref={(el) => {this.addForm = el}}>
 
             <h3>Add an article</h3>
 
@@ -33,7 +60,12 @@ class AddArticle extends Component {
             
             <div className="form-group">
 	          <label htmlFor="category-input">Category</label>
-	          <input type="text" className="form-control" name="category-input" id="category-input" placeholder="Enter article category"/>
+			  <select className="form-control" name="type-input" id="type-input">
+	            <option value="1">World</option>
+	            <option value="2">Nation</option>
+	            <option value="3">Business</option>
+	          </select>
+	          {/* <input type="text" className="form-control" name="category-input" id="category-input" placeholder="Enter article category"/> */}
 	        </div>
 
             <div className="form-group">
