@@ -22,7 +22,8 @@ class App extends Component {
           id: 1,
           title: "Title",
           author: "John Smith",
-          category: "World",
+          category: "world",
+          category_id: 1,
           source: "Source",
           timestamp: "2020 21/08 15:00",
         },
@@ -31,7 +32,8 @@ class App extends Component {
         id: 1,
         title: "Title",
         author: "John Smith",
-        category: "World",
+        category: "world",
+        category_id: 1,
         source: "Source",
       }
     };
